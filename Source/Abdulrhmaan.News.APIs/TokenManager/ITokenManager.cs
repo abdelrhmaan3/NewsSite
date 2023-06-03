@@ -1,7 +1,7 @@
 ﻿using Abdulrhmaan.News.SQlServer;
 using System.Security.Claims;
 
-namespace Abdulrhmaan.News.APIs.TokenManager.TokenManager;
+namespace Abdulrhmaan.News.APIs.TokenManager;
 public interface ITokenManager
 {
     Task<bool> IsCurrentActiveToken();
