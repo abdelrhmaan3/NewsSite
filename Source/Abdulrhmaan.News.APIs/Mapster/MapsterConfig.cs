@@ -2,7 +2,7 @@
 using Abdulrhmaan.NewsSite.Data;
 using Mapster;
 
-namespace Abdulrhmaan.News.APIs
+namespace Abdulrhmaan.News.APIs.Mapster
 {
     public static class MapsterConfig
     {
