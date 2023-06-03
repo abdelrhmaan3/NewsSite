@@ -1,0 +1,41 @@
+﻿@model NewsVM
+
+<h1>Edit News Item</h1>
+@using (Html.BeginForm("Edit", "News", FormMethod.Post))
+{
+
+    <div class="form-group">
+        <label for="Title" class="control-label">Title</label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+   
+    <div class="form-group">
+        <label asp-for="Description" class="control-label">Description</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group" onload="SetCatogry()">
+        <label asp-for="CategoryId" class="control-label">Category</label>
+        <select id="categoryDropdown" asp-for="CategoryId" asp-items="@ViewBag.Categories" class="form-control">
+             <option value=""></option>
+            
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
+<script>
+    function SetCatogry(){
+        debugger;
+        var categoryId = "@Model.CategoryId";
+        document.getElementById("categoryDropdown").val = categoryId;
+    }
+   
+</script>
+

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Client.News.Models.NewsVM>
+
+@{
+    ViewData["Title"] = "News";
+}
+
+<h1>News</h1>
+
+
+@using (Html.BeginForm("News", "Home", FormMethod.Get))
+{
+    <div>
+        @Html.DropDownList("cateogryId", ViewBag.Categories as SelectList, "All Categories", new { onchange = "this.form.submit();" })
+    </div>
+}
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+
+                    <td>
+                    @Html.ActionLink("Show", "Show", new { id=item.Id })
+                       
+                    </td>
+               
+            </tr>
+        }
+    </tbody>
+</table>

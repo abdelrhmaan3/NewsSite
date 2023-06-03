@@ -1,0 +1,8 @@
+﻿@model NewsVM
+
+<h2>@Model.Title</h2>
+
+<p>@Model.Description</p>
+
+<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+<a asp-action="Index">Back to List</a>
